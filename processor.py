@@ -1,9 +1,12 @@
 import csv
+from sys import argv
+
+ticker = argv[1]
 a = []
 b = []
 temp = []
 norms = [0,0,0,0,0,0,0,0,0,0,0]
-with open("output.csv","rb") as f:
+with open(ticker+"_raw.csv","r") as f:
 	reader = csv.reader(f)
 	for row in reader:
 		lrow = list(row)
@@ -21,5 +24,11 @@ for row in a:
 	b.append(temp)
 	temp = []
 
-print "end"
-print b
+print( "end")
+print( b)
+print("stuff")
+print(b[0][0])
+print("b[1000][0]="+str(b[1000][0]))
+with open(ticker+"_norm.csv","w") as f:
+	writer = csv.writer(f)
+	writer.writerows(b)

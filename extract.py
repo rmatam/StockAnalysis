@@ -21,7 +21,7 @@ print(data)
 
 ls = data.values.tolist()
 
-with open("output.csv","wb") as f:
+with open(ticker+"_raw.csv","w") as f:
 	writer = csv.writer(f)
 	writer.writerows(ls)
 
