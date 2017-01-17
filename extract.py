@@ -8,17 +8,19 @@ ticker = argv[1]
 data = web.get_data_yahoo(ticker)
 
 stock_df = Sdf.retype(data)
-data['rsi']=stock_df['rsi_14']
+data['rsi_14']=stock_df['rsi_14']
+data['rsi_6']=stock_df['rsi_6']
 data['macd']=stock_df['macd']
-
-del data['close_-1_s']
-del data['close_-1_d']
-del data['rs_14']
-del data['rsi_14']
-del data['macds']
-
-print(data)
-
+data['boll_ub']=stock_df['boll_ub']
+data['boll_lb']=stock_df['boll_lb']
+data['tr']=stock_df['tr']
+data['dma']=stock_df['dma']
+data['pdi']=stock_df['pdi']
+data['mdi']=stock_df['mdi']
+data['trix']=stock_df['trix']
+data['vr']=stock_df['vr']
+data['cr']=stock_df['cr']
+data['kdjk']=stock_df['kdjk']
 ls = data.values.tolist()
 
 with open(ticker+"_raw.csv","w") as f:
