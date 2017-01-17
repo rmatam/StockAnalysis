@@ -11,3 +11,5 @@ pandas-datareader
 csv
 stockstats
 pytrends
+
+It is of note that the last entry in the compiled data is the most recent date. To get the list of variables look in the raw data files.
