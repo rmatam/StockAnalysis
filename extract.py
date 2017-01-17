@@ -4,28 +4,22 @@ import pandas_datareader as web
 from stockstats import StockDataFrame as Sdf
 from sys import argv
 
-ticker = argv[1]
-data = web.get_data_yahoo(ticker)
+def extract(ticker):
 
-stock_df = Sdf.retype(data)
-data['rsi']=stock_df['rsi_14']
-data['macd']=stock_df['macd']
+    data = web.get_data_yahoo(ticker)
 
-del data['close_-1_s']
-del data['close_-1_d']
-del data['rs_14']
-del data['rsi_14']
-del data['macds']
+    stock_df = Sdf.retype(data)
+    data['rsi']=stock_df['rsi_14']
+    data['macd']=stock_df['macd']
 
-print(data)
+    del data['close_-1_s']
+    del data['close_-1_d']
+    del data['rs_14']
+    del data['rsi_14']
+    del data['macds']
 
-ls = data.values.tolist()
+    ls = data.values.tolist()
 
-with open(ticker+"_raw.csv","w") as f:
-	writer = csv.writer(f)
-	writer.writerows(ls)
-
-
-	
-
-
+    with open("StockData/"+ticker+"_raw.csv","w") as f:
+        writer = csv.writer(f)
+        writer.writerows(ls)
