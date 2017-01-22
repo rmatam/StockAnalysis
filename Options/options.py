@@ -65,4 +65,5 @@ features = ['open', 'close',
 'close_-30_r',
 'open_30_sma', # 30 day simple moving average
 'close_30_sma', # 30 day simple moving average
+'rsi_14',
 'open_1_r', 'open_1_d'] # percent and absolute change for tomorrow - the truth outcomes

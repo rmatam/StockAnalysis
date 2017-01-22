@@ -18,6 +18,10 @@ def train(data):
     Y["overnight_d"] = X["open"]-X["open_1_d"]-X["close"]
     Y["overnight_r"] = Y["overnight_d"]/X["close"]
 
+    # remove truth parameters from training data
+    X = X.drop("open_1_d", 1) # 1 means it's a column
+    X = X.drop("open_1_r", 1)
+
     # just try to guess whether the overnight behavior will be positive or negative
     Y["overnight_d"] = [0 if value<=0 else 1 for value in Y["overnight_d"]]
     Y["overnight_r"] = [0 if value<=0 else 1 for value in Y["overnight_r"]]
