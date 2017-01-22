@@ -25,8 +25,8 @@ def process(ticker):
 
 			for i in range(0,len(lrow)):
 			
-				if(float(lrow[i])>norms[i]):
-					norms[i]=float(lrow[i])			
+				if(abs(float(lrow[i]))>norms[i]):
+					norms[i]=abs(float(lrow[i]))			
 			a.append(lrow)
 
 	#create a normalization constant (starting at zero) for each column
