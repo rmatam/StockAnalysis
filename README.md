@@ -1,12 +1,16 @@
 # StockAnalysis
+
+Use Python 3
+
 This project will attempt to use machine learning to predict correlations and prediction of the stock markets. Primarily NYSE.
 
 To get normalized data edit and use:
 
-python processStocks.py
+python stockPredictor.py
 
 Packages:
 
+pandas
 pandas-datareader
 csv
 stockstats
