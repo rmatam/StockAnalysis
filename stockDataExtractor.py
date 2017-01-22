@@ -23,10 +23,7 @@ def extract(stocks, features):
         extractedData = pd.DataFrame() # empty data frame
 
         for feature in features:
-            if feature == 'open_1_r' or feature == 'open_1_d':
-                extractedData[feature] = -sdfData[feature] # make these values reflect movement into the future
-            else:
-                extractedData[feature] = sdfData[feature]
+            extractedData[feature] = sdfData[feature]
 
         allExtractedData = allExtractedData.append(extractedData, ignore_index=True)
 
