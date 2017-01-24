@@ -1,0 +1,20 @@
+Add error checking to the code so this shit doesn't happen:
+
+Traceback (most recent call last):
+  File "stockPredictor.py", line 11, in <module>
+    data = stockDataExtractor.extract(stocks, features) # extract data for all stocks
+  File "/Users/mattzhang/Dropbox/Projects/StockAnalysis/stockDataExtractor.py", line 20, in extract
+    webData = web.get_data_yahoo(ticker)
+  File "/Users/mattzhang/py3_kernel/lib/python3.5/site-packages/pandas_datareader/data.py", line 40, in get_data_yahoo
+    return YahooDailyReader(*args, **kwargs).read()
+  File "/Users/mattzhang/py3_kernel/lib/python3.5/site-packages/pandas_datareader/yahoo/daily.py", line 76, in read
+    df = super(YahooDailyReader, self).read()
+  File "/Users/mattzhang/py3_kernel/lib/python3.5/site-packages/pandas_datareader/base.py", line 155, in read
+    df = self._read_one_data(self.url, params=self._get_params(self.symbols))
+  File "/Users/mattzhang/py3_kernel/lib/python3.5/site-packages/pandas_datareader/base.py", line 74, in _read_one_data
+    out = self._read_url_as_StringIO(url, params=params)
+  File "/Users/mattzhang/py3_kernel/lib/python3.5/site-packages/pandas_datareader/base.py", line 85, in _read_url_as_StringIO
+    response = self._get_response(url, params=params)
+  File "/Users/mattzhang/py3_kernel/lib/python3.5/site-packages/pandas_datareader/base.py", line 120, in _get_response
+    raise RemoteDataError('Unable to read URL: {0}'.format(url))
+pandas_datareader._utils.RemoteDataError: Unable to read URL: http://ichart.finance.yahoo.com/table.csv?f=2017&ignore=.csv&c=2010&d=0&b=1&e=22&s=BGX&g=d&a=0

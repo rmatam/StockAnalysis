@@ -1,8 +1,8 @@
 # stocks = [] # extract all stocks on NYSE
-stocks = ["DDD", "MMM", "WBAI"] # extract all stocks on NYSE
+stocks = ["DDD", "MMM", "WBAI"]
 
 # features = ['open', 'high', 'low', 'close', 'volume', 'adj close', 'rsi_14', 'rsi_6', 'macd', 'boll_ub', 'boll_lb', 'tr', 'dma', 'pdi', 'mdi', 'trix', 'vr', 'cr', 'kdjk']
-features = ['open', 'close',
+features = ['open', 'close', 'high',
 'open_-1_r', # percent change in open from last day
 'open_-2_r', # percent change in open from two days ago
 'open_-3_r',
@@ -65,5 +65,4 @@ features = ['open', 'close',
 'close_-30_r',
 'open_30_sma', # 30 day simple moving average
 'close_30_sma', # 30 day simple moving average
-'rsi_14',
-'open_1_r', 'open_1_d'] # percent and absolute change for tomorrow - the truth outcomes
+'open_1_r', 'open_1_d', 'close_1_r', 'close_1_d'] # percent and absolute change for tomorrow - the truth outcomes
